@@ -1,0 +1,56 @@
+@import "./_variables.less";
+
+.dark-theme {
+  background-color: @background-color;
+  color: @text-color;
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 20px;
+
+    .logo-container {
+      img {
+        height: auto;
+        max-height: 80px;
+      }
+    }
+
+    .ant-menu {
+      background-color: transparent;
+      height: 80px;
+      line-height: 80px;
+
+      .ant-menu-item, .ant-menu-submenu-title {
+        color: @text-color;
+        padding: 0 15px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: @hover-background-color;
+          color: @hover-text-color;
+        }
+
+        &.ant-menu-item-selected, &.ant-menu-submenu-selected {
+          background-color: @selected-background-color;
+          color: @selected-text-color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      padding-bottom: 20px;
+    }
+  }
+}

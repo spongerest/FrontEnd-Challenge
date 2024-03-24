@@ -1,0 +1,83 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .sidebar {
+    flex: 1;
+    min-width: 250px;
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 8px;
+
+    .widget {
+      margin-bottom: 20px;
+    }
+  }
+  .main-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.accent {
+  color: #4B8BFF;
+}
+
+a:hover {
+  color: #4B8BFF;
+  text-decoration: underline;
+}
+
+.news-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .ant-card-cover img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .ant-card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+}
+
+body, p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    .main-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    flex-direction: column;
+
+    .sidebar {
+      order: -1;
+    }
+  }
+}
