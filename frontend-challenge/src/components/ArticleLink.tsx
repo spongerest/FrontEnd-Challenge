@@ -9,7 +9,7 @@ const ArticleLink: React.FC<ArticleProps> = ({ article }) => (
     <a
     href={article.url}
     target="_blank"
-    rel="noopener noreferrer" // Penting untuk keamanan dan aksesibilitas
+    rel="noopener noreferrer"
     >
     {article.title}
     </a>
